@@ -15,6 +15,7 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
      * */  
     public void channelActive(ChannelHandlerContext ctx) {  
         ctx.write(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));  
+        ctx.flush();
     }  
     /** 
      *此方法会在接收到服务器数据后调用  
